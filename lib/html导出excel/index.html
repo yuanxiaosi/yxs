@@ -1,0 +1,24 @@
+<html>
+<head>
+<meta http-equiv="content-Type" content="text/html;charset=utf-8"/>
+
+<script type="text/javascript" src="./index.js"></script>
+</head>
+<body>
+<table id="datatable">
+    <tr>
+        <td>100</td> <td>200</td> <td>300</td>
+    </tr>
+    <tr>
+        <td>400</td> <td>500</td> <td>600</td>
+    </tr>
+</table>
+
+<a download="somedata.xls" href="#" onclick="return ExcellentExport.excel(this, 'datatable', 'Sheet Name Here');">Export to Excel</a>
+<a download="somedata.csv" href="#" onclick="return ExcellentExport.csv(this, 'datatable');">Export to CSV</a>
+<!-- new API, xlsx -->
+<a download="somedata.xlsx" href="#" onclick="return ExcellentExport.convert({ anchor: this, filename: 'data_123.array', format: 'xlsx'},[{name: 'Sheet Name Here 1', from: {table: 'datatable'}}]);">Export to CSV</a>
+
+
+</body>
+</html>
